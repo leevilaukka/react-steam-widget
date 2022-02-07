@@ -1,10 +1,13 @@
-import * as React from 'react'
-import './styles.scss'
+import * as React from "react";
+import { IframeHTMLAttributes } from "react"
 
-const Package: React.FC = () => (
-  <div className="package">
-    <h2>Do cool stuff</h2>
-  </div>
-)
+type Props = {
+    steamID: string;
+    content?: string;
+} & IframeHTMLAttributes<HTMLIFrameElement>;
 
-export default Package
+export default ({steamID, content, ...rest}: Props) => {
+    return (
+        <iframe src={`https://store.steampowered.com/widget/${steamID}/${content ? `/?t=${content}` : ""}`} width="646" height="190" {...rest}></iframe>
+    )
+}
