@@ -8,6 +8,6 @@ type Props = {
 
 export default ({steamID, content, ...rest}: Props) => {
     return (
-        <iframe src={`https://store.steampowered.com/widget/${steamID}/${content ? `/?t=${content}` : ""}`} width="646" height="190" {...rest}></iframe>
+        <iframe src={`https://store.steampowered.com/widget/${steamID}/${content  ? `/?t=${content}` : ""}`} width="646" height="190" {...rest}></iframe>
     )
 }
